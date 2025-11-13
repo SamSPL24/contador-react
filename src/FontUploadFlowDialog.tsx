@@ -1,14 +1,10 @@
-// src/FontUploadFlowDialog.tsx
+
 
 import * as React from 'react';
-// MUDANÇA: Tentando nomes alternativos (DialogContainer, DialogAction) ou removendo exportações problemáticas.
-// Vamos tentar remover Content e Actions e usar os nomes mais prováveis diretamente.
 import { Dialog } from '@progress/kendo-react-dialogs'; 
 import { Button } from '@progress/kendo-react-buttons';
 import { Upload } from '@progress/kendo-react-upload';
 
-// ** ATENÇÃO: Se as tags abaixo falharem, use o nome alternativo sugerido pelo seu VS Code!
-// Ex: Se <DialogContainer> falhar, use a tag <DialogContent>
 const DialogContainer = (Dialog as any).Container || 'div';
 const DialogAction = (Dialog as any).Action || 'div'; 
 
@@ -67,11 +63,10 @@ const FontUploadFlowDialog: React.FC<FontUploadFlowDialogProps> = ({
       style={{ width: width }}
     >
       
-      {/* MUDANÇA: Usando uma div simples ou o nome alternativo (DialogContainer) */}
-      {/* SE ISTO FALHAR, USE A TAG <div> SIMPLES: <div> */}
+    
       <DialogContainer> 
         {!areTermsAccepted ? (
-          // --- VIEW: TERMOS E CONDIÇÕES ---
+         
           <>
             <p>
               By selecting "I Agree" you represent and warrant that you have obtained all necessary licenses and 
@@ -93,7 +88,7 @@ const FontUploadFlowDialog: React.FC<FontUploadFlowDialogProps> = ({
             </div>
           </>
         ) : (
-          // --- VIEW: UPLOAD DA FONTE ---
+          
           <div style={{ padding: '20px 0' }}>
             <Upload
               batch={false}
@@ -110,8 +105,7 @@ const FontUploadFlowDialog: React.FC<FontUploadFlowDialogProps> = ({
       </DialogContainer>
 
       
-      {/* MUDANÇA: Usando uma div simples ou o nome alternativo (DialogAction) */}
-      {/* SE ISTO FALHAR, USE A TAG <div> SIMPLES: <div> */}
+
       <DialogAction>
         <Button onClick={onClose} themeColor="secondary">
           CANCEL
